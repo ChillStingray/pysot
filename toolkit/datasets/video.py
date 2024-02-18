@@ -16,6 +16,11 @@ class Video(object):
         self.attr = attr
         self.pred_trajs = {}
         self.img_names = [os.path.join(os.path.abspath(root), os.path.abspath(x)) for x in img_names]
+
+        #* GPT approach
+        #base_path = os.path.abspath(os.path.join(root, video_dir))
+        #self.img_names = [os.path.join(base_path, x) for x in img_names]
+
         self.imgs = None
 
         if load_img:

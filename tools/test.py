@@ -38,8 +38,9 @@ torch.set_num_threads(1)
 
 def main():
     # load config
+    print("sdjklflh")
     cfg.merge_from_file(args.config)
-
+    xyz = cfg.merge_from_file(args.config)
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     dataset_root = os.path.join(cur_dir, '../testing_dataset', args.dataset)
 

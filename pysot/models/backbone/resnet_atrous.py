@@ -3,6 +3,8 @@ import math
 import torch.nn as nn
 import torch
 
+#* my code
+torch.backends.cudnn.benchmark = True
 
 __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50']
 
