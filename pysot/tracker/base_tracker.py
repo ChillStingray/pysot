@@ -85,7 +85,7 @@ class SiameseTracker(BaseTracker):
                           int(context_xmin):int(context_xmax + 1), :]
 
         if not np.array_equal(model_sz, original_sz):
-            im_patch = cv2.resize(im_patch, (model_sz, model_sz))
+            im_patch = cv2.resize(im_patch, (model_sz, model_sz))           #! current error location
         im_patch = im_patch.transpose(2, 0, 1)
         im_patch = im_patch[np.newaxis, :, :, :]
         im_patch = im_patch.astype(np.float32)

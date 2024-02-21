@@ -9,7 +9,7 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "cwd": "~/pysot/experiments/siamrpn_r50_l234_dwxcorr",
+            "cwd": "/home/dhruv/pysot/experiments/siamrpn_r50_l234_dwxcorr",
             "console": "integratedTerminal",
             "args": "--snapshot model.pth --dataset UAV123 --config config.yaml"
         }

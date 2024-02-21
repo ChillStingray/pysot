@@ -38,9 +38,7 @@ torch.set_num_threads(1)
 
 def main():
     # load config
-    print("sdjklflh")
     cfg.merge_from_file(args.config)
-    xyz = cfg.merge_from_file(args.config)
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     dataset_root = os.path.join(cur_dir, '../testing_dataset', args.dataset)
 
@@ -146,6 +144,7 @@ def main():
             scores = []
             track_times = []
             for idx, (img, gt_bbox) in enumerate(video):
+                #try:
                 tic = cv2.getTickCount()
                 if idx == 0:
                     cx, cy, w, h = get_axis_aligned_bbox(np.array(gt_bbox))
@@ -162,6 +161,10 @@ def main():
                     pred_bbox = outputs['bbox']
                     pred_bboxes.append(pred_bbox)
                     scores.append(outputs['best_score'])
+                #except Exception as e:
+                    #print(e)
+                    #pred_bboxes.append([2])
+                    #scores.append(0)
                 toc += cv2.getTickCount() - tic
                 track_times.append((cv2.getTickCount() - tic)/cv2.getTickFrequency())
                 if idx == 0:
